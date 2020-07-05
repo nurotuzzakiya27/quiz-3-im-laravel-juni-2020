@@ -1,91 +1,51 @@
-# Quiz 3 
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-## 0. Setup (5 poin)
-Repositori ini dibangun dengan Laravel versi 6.02 ke atas. Setelah melakukan fork dan clone dari repositori ini, lakukanlah langkah-langkah di bawah ini untuk menjalankan project. 
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
 
-* masuk ke direktori quiz-3
-```bash
-$ cd quiz-3
-```
-* jalankan perintah composer install untuk mendownload direktori vendor
-```bash
-$ composer install
-```
-* buat file .env lalu isi file tersebut dengan seluruh isi dari file .env.example
+## About Laravel
 
-* jalankan perintah php artisan key generate
-```bash
-$ php artisan key:generate
-```
-* Tambahan: Untuk pengerjaan di laptop/PC masing-masing, sesuaikan nama database, username dan password nya di file .env dengan database kalian. 
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-Setelah itu kalian sudah bisa lanjut mengerjakan soal berikutnya. jangan lupa untuk menjalankan server laravel
-```bash
-$ php artisan serve
-```
-## 1. Membuat ERD (15 poin)
-Seorang klien ingin dibuatkan sebuah portal blog seperti [Medium](https://medium.com) yaitu tempat orang berbagi tulisan artikel. Setiap user dapat membuat banyak artikel.
-berikut deskripsi singkat mengenai requirement web tersebut: 
-* user dapat membuat banyak artikel, 1 artikel kepunyaan satu user (5 poin)
-* user dapat mengikuti (*follow*) ke user yang lain.
-* 1 user dapat *follow* ke banyak user, dan 1 user dapat diikuti (*follower*) oleh banyak user. (5 poin)
-* tabel artikel terdapat data : judul(varchar), isi(varchar), slug(varchar), dan tag(varchar). (5 poin)
-* slug adalah string yang otomatis dibuat sesuai judul yang dilowercase dan diberi pemisah (-). contoh judul artikel : "Membuat Tampilan HTML" maka slug nya adalah membuat-tampilan-html
-Buatlah ERD untuk keperluan portal blog tersebut lalu export ke dalam format gambar (PNG). Kamu bisa gunakan mysql workbench atau aplikasi online draw.io. 
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Simpan file PNG tersebut di dalam folder images dan simpan folder images tersebut di folder public di project  ini.
+Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
 
-## 2. Membuat Migrations (10 poin)
-Buatlah Migration yang diimplementasi dari ERD yang dibuat di soal sebelumnya. 
+## Learning Laravel
 
-## 3. Membuat Model (10 poin)
-Buatlah class ArtikelModel untuk merepresentasikan data pada tabel artikel di database. Model tersebut berisi function-function yang dibutuhkan untuk proses CRUD.
+Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
 
-## 4. Membuat Controller (10 poin)
-Buatlah controller untuk mengatur fitur CRUD artikel. 
+If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
 
+## Laravel Sponsors
 
-## 5. Memasangkan Template & Routing(25 poin)
-* Pada project ini kamu diminta untuk memasangkan template dari SB-Admin-2 https://startbootstrap.com/themes/sb-admin-2/. Kami sudah memasangkan asset-asset yang sudah didownload dari halaman SB-Admin-2 di folder public. Tugas kamu adalah memperbaiki template master blade yang terdapat di folder resources/views/layouts/master.blade.php dan hubungkan dengan asset-asset yang diperlukan.  (5 poin)
-* Web memiliki route sebagai berikut: (10 poin)
+We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
 
-| url                         | method | keterangan      |
-|----------                   | -------- | -------------- |
-| ```'/'```                   |```GET```| menampilkan gambar PNG/JPG/JPEG desain ERD yang sudah dibuat di soal no. 1  |
-| ```'/artikel' ```        | ```GET``` | menampilkan tabel berisi data artikel-artikel |
-| ```'/artikel/create'```  | ```GET``` | menampilkan form untuk membuat artikel baru  |
-| ```'/artikel'``` | ```POST``` | menyimpan artikel baru 
-| ```'/artikel/{id}'``` | ```GET``` | menampilkan halaman detil (show) untuk artikel dengan id tertentu
-| ```'/artikel/{id}/edit'``` | ```GET``` | menampilkan halaman form edit untuk artikel dengan id tertentu
-| ```'/artikel/{id}'``` | ```PUT``` | menyimpan data dari form edit 
-| ```'/artikel/{id}'``` | ```DELETE``` | menghapus data dengan id tertentu
+- **[Vehikl](http://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[British Software Development](https://www.britishsoftware.co)**
+- **[Styde](https://styde.net)**
+- [Fragrantica](https://www.fragrantica.com)
+- [SOFTonSOFA](https://softonsofa.com/)
 
-- pasangkanlah script berikut ini ke HANYA ke halaman blade untuk menampilkan data pada tabel artikel (pada url ```'/artikel'```). (10 poin)
+## Contributing
 
-```html
-<script>
-    Swal.fire({
-        title: 'Berhasil!',
-        text: 'Memasangkan script sweet alert',
-        icon: 'success',
-        confirmButtonText: 'Cool'
-    })
-</script>
-```
-- Jika pemasangan script pada poin sebelumnya berhasil maka akan menampilkan alert seperti ini di halaman courses tersebut:
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-![swal-example.gif](swal-example.gif?raw=true)
+## Security Vulnerabilities
 
-## 6. Alur CRUD (10 poin)
-Pastikan alur CRUD artikel berjalan seperti alur CRUD biasanya. Gambarannya adalah seperti berikut:
-* halaman index artikel (```'/artikel'```) menampilkan tabel kumpulan artikel lengkap beserta tombol-tombol actionnya. terdapat pula tombol menuju form pembuatan artikel.
-* halaman create artikel menampilkan form untuk membuat artikel baru, sesudah submit lalu halaman kembali ke index artikel.
-* halaman show untuk menampilkan detail artikel
-* halaman edit untuk menampilkan form edit artikel, sesudah submit kembali ke index artikel 
-* dan seterusnya. 
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-## 7. Tampilan Tag Artikel (15 poin)
-Tampilkanlah detil artikel di route ```'/artikel/{id}'``` seperti berikut: 
+## License
 
-![detil-artikel](detilartikel.PNG)
-Catatan: Data yang ditampilkan hanya contoh, sesuaikan data pada tabel artikel sehingga tampilannya seperti gambar contoh. Data tag ditampilkan dengan button-button terpisah.
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
